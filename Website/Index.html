@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Bootstrap Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #161666;
+        color: white;
+      }
+      .site-logo {
+        display: block;
+        margin: 20px auto;
+        max-width: 150px;
+      }
+      .banner {
+        position: relative;
+        width: 100%;
+        height: 500px; /* Adjust height as needed */
+        background: url("./Assets/BackBanner.jpg") no-repeat center center;
+        background-size: cover;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      }
+      .banner-content {
+        position: relative;
+        z-index: 2;
+      }
+      .banner-content h1 {
+        font-size: 5.8rem; /* Adjust font size */
+        font-weight: bold;
+      }
+      .banner-content p {
+        font-size: 1.2rem;
+      }
+      .site-logo:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+      }
+      .custom-btn {
+        background: #161666;
+        border: 1px solid #161666;
+        padding: 15px 30px;
+        font-weight: 600;
+      }
+      .custom-btn:hover {
+        background: white;
+        color: #161666;
+        border: 1px solid white;
+        transition: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .banner {
+          height: 300px; /* Reduced height for smaller screens */
+        }
+        .banner-content h1 {
+          font-size: 4.2rem; /* Adjust font size */
+          font-weight: bold;
+        }
+      }
+      @media (max-width: 576px) {
+        .banner-content h1 {
+          font-size: 3.5rem;
+        }
+        .banner-content p {
+          font-size: 1rem;
+        }
+      }
+      .latest-movies {
+        margin: 50px 0;
+        text-align: center;
+      }
+      .card {
+        background-color: #0a0a52;
+        border: none;
+        border-radius: 10px;
+      }
+      .card img {
+        border-radius: 10px 10px 0 0;
+      }
+      .card-title {
+        font-weight: 400;
+        font-size: 28px;
+        color: #ffffff;
+        text-decoration: none !important;
+      }
+      .card-text {
+        font-weight: 400;
+        padding-bottom: 20px;
+        opacity: 0.5;
+        color: #ffffff;
+        text-decoration: none;
+    }
+    a{
+          text-decoration: none;
+
+      }
+      .footer-bar {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Site Logo -->
+    <div class="text-center py-3">
+      <img
+        src="./Assets/SiteLogo.png"
+        alt="Site Logo"
+        class="site-logo"
+        height="80px"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Full-Width Banner -->
+    <div class="banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h1>Movie Site</h1>
+        <p>Your Favourite Movies Here</p>
+        <a
+          href="#movies"
+          class="btn btn-primary mt-4 mb-2 custom-btn"
+          aria-label="Explore Movies"
+          >Explore Movies</a
+        >
+      </div>
+    </div>
+
+    <!-- Latest Movies Section -->
+    <div class="container" id="movies">
+      <div class="latest-movies">
+        <h2>Latest Movies</h2>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Card 1 -->
+         <a href="movie1.html">
+             <div class="col-md-4 mb-4">
+                 <div class="card">
+                     <img
+                     src="./Assets/film1.png"
+                     class="card-img-top p-4"
+                     alt="Pushpa 2"
+                     />
+                     <div class="card-body text-center">
+                         <h3 class="card-title">Pushpa 2</h3>
+              <p class="card-text">2024</p>
+            </div>
+        </a>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+  &copy; <span id="currentYear"></span> Movie Site. All rights reserved.
+</div>
+
+<script>
+  // Set the current year dynamically
+  const currentYear = new Date().getFullYear();
+  document.getElementById("currentYear").textContent = currentYear;
+</script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

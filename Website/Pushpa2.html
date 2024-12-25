@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Video Player</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .site-logo {
+        display: block;
+        margin: 20px auto;
+        max-width: 150px;
+      }
+      .banner {
+        position: relative;
+        width: 100%;
+        height: 500px; /* Adjust height as needed */
+        background: url("./Assets/BackBanner.jpg") no-repeat center center;
+        background-size: cover;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      }
+      .banner-content {
+        position: relative;
+        z-index: 2;
+      }
+      .banner-content h1 {
+        font-size: 5.8rem; /* Adjust font size */
+        font-weight: bold;
+      }
+      .banner-content p {
+        font-size: 1.2rem;
+      }
+      .site-logo:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+      }
+      .custom-btn {
+        background: #161666;
+        border: 1px solid #161666;
+        padding: 15px 30px;
+        font-weight: 600;
+      }
+      .custom-btn:hover {
+        background: white;
+        color: #161666;
+        border: 1px solid white;
+        transition: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .banner {
+          height: 300px; /* Reduced height for smaller screens */
+        }
+        .banner-content h1 {
+          font-size: 4.2rem; /* Adjust font size */
+          font-weight: bold;
+        }
+      }
+      @media (max-width: 576px) {
+        .banner-content h1 {
+          font-size: 3.5rem;
+        }
+        .banner-content p {
+          font-size: 1rem;
+        }
+      }
+      .latest-movies {
+        margin: 50px 0;
+        text-align: center;
+      }
+      .card {
+        background-color: #0a0a52;
+        border: none;
+        border-radius: 10px;
+      }
+      .card img {
+        border-radius: 10px 10px 0 0;
+      }
+      .card-title {
+        font-weight: 400;
+        font-size: 28px;
+        color: #ffffff;
+        text-decoration: none !important;
+      }
+      .card-text {
+        font-weight: 400;
+        padding-bottom: 20px;
+        opacity: 0.5;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        background-color: #161666;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      .video-player-container {
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        /* background-color: #0a0a52; */
+        max-width: 900px;
+        text-align: center;
+      }
+      .video-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      video {
+        width: 100%;
+        max-height: 500px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+      .video-description {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #d1d1d1;
+      }
+      .btn-back {
+        margin-top: 30px;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 5px;
+        background-color: #00bcd4;
+        color: white;
+        border: none;
+      }
+      .btn-back:hover {
+        background-color: #008c9e;
+      }
+      .footer-bar {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Full-Width Banner -->
+    <div class="banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h1>Watch Pushpa 2: The Rule</h1>
+        <!-- <p>Your Favourite Movies Here</p> -->
+        <a
+          href="index.html"
+          class="btn btn-primary mt-4 mb-2 custom-btn"
+          aria-label="Explore Movies"
+          >Back to Home</a
+        >
+      </div>
+    </div>
+    <div class="container video-player-container">
+      <!-- Video Title -->
+      <!-- <div class="video-title">Watch Pushpa 2 Online</div> -->
+
+      <!-- Video Player -->
+      <video controls poster="./Assets/file-JkvKo8ZuctRrudibUEaGKt.png">
+        <!-- Replace the video source URL with your video link -->
+        <source
+          src="http://69.197.187.24/movies/Pushpa-2.mkv"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Video Description -->
+      <p class="video-description pb-5">
+        Pushpa 2: The Rule picks up from the explosive events of the first part,
+        following Pushpa`s meteoric rise as he expands his red sandalwood empire
+        beyond borders. As tensions escalate with rival factions and the
+        authorities, his growing ambitions draw him into intense confrontations
+        and political upheavals.
+      </p>
+
+      <!-- Back Button -->
+      <a href="index.html" class="btn btn-back">Back to Movies</a>
+    </div>
+    <div class="footer-bar">
+      &copy; <span id="currentYear"></span> Movie Site. All rights reserved.
+    </div>
+
+    <script>
+      // Set the current year dynamically
+      const currentYear = new Date().getFullYear();
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
